@@ -1,0 +1,423 @@
+.booking-doc-info {
+	@extend %display-flex;
+	.booking-doc-img {
+	    width: 80px;
+	    margin-right: 15px;
+	    @include respond-below(custom767) {
+	    	width: 75px;
+	    }
+	    @include respond-below(custom575) {
+	    	width: 70px;
+	    }
+	    img {
+		    height: 80px;
+		    width: 80px;
+		    object-fit: $__cover;
+		    @include rounded(4px);
+		    @include respond-below(custom767) {
+		    	height: 75px;
+    			width: 75px;
+		    }
+		    @include respond-below(custom575) {
+		    	height: 70px;
+		    	width: 70px;
+		    }
+		}
+	}
+}
+.schedule-widget {
+    min-height: 100px;
+    @include rounded(4px);
+    .schedule-header {
+	    border-bottom: 1px solid $__light-silver;
+	    @include margin-padding(null, 10px 20px);
+	    @include rounded(4px 4px 0 0);
+	    h4 {
+		    font-size: $__font__size__18;
+		    font-weight: $__semibold;
+		    @include margin-padding(3px 0 0, null);
+		}
+	}
+}
+.day-slot{
+	ul {
+	    float: $__left;
+	    list-style: $__none;
+	    position: $__relative;
+	    width: $__full__width;
+	    @include margin-padding(auto -5px 0 -5px, 0);
+	    li {
+		    float: $__left;
+		    padding-left: 5px;
+		    padding-right: 5px;
+		    text-align: $__center;
+		    width: 14.28%;
+		    span {
+			    display: $__block;
+			    font-size: $__font__size__18;
+			    text-transform: $__uppercase;
+			    @include respond-below(custom767) {
+			    	font-size: $__font__size__16;
+					text-transform: $__unset;
+			    }
+			    &.slot-date {
+				    display: $__block;
+				    color: $__smokey-gray;
+				    font-size: $__font__size__14;
+				}
+			}
+			small {
+				&.slot-year {
+				    color: $__smokey-gray;
+				    font-size: $__font__size__14;
+				    @include respond-below(custom767) {
+				    	display: $__none;
+				    }
+				}
+			}
+			&.left-arrow {
+			    text-align: $__center;
+			    width: 20px !important;
+			    @include transform(translateY(-50%));
+			    @include position($__absolute, 50%, null, null, 0);
+			    @include margin-padding(null, 0);
+			    @include respond-below(custom991) {
+			    	left: -10px;
+			    }
+			}
+			&.right-arrow {
+			    text-align: $__center;
+			    width: 20px !important;		    
+			    @include transform(translateY(-50%));
+			    @include position($__absolute, 50%, -11px, null, null);
+			    @include margin-padding(null, 0);
+			}
+		}
+	}
+}
+.schedule-cont {
+    @include margin-padding(null, 20px);
+}
+.time-slot { 
+	ul {
+	    list-style: $__none;
+	    @include margin-padding(auto -5px 0 -5px, 0);
+	    li {
+		    float: $__left;
+		    padding-left: 5px;
+		    padding-right: 5px;
+		    width: 14.28%;
+		    .timing {
+			    background-color: $__light__metalic;
+			    border: 1px solid $__light__metalic;
+			    @include rounded(3px);
+			    color: $__smokey-gray;
+			    display: $__block;
+			    font-size: $__font__size__14;
+			    margin-bottom: 10px;
+			    @include margin-padding(null, 5px 5px);
+			    text-align: $__center;
+				position: $__relative;
+				&:hover {
+				    background-color: $__white;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+				&.selected {
+					background-color: $__deep__skyblue;
+					border: 1px solid $__deep__skyblue;
+					color: $__white;
+					&::before {
+					    color: $__white;
+					    content: "\f00c";
+					    font-family: "Font Awesome 5 Free";
+						font-size: $__font__size__12;
+					    font-weight: 900;
+					    @include position($__absolute, 6px, 6px, null, null);
+					    @include respond-below(custom991) {
+					    	display: $__none;
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+.schedule-list {
+    border-bottom: 1px solid $__blue__angel;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    &:last-child {
+	    border-bottom: 0;
+	    margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+.submit-section {
+	&.proceed-btn {
+		@include margin-padding(0 0 30px, null);
+		@include respond-below(custom767) {
+			margin-bottom: 20px;
+		}
+	}
+}
+.tab-content{
+	&.schedule-cont {
+		.card-title {
+			margin-bottom: 10px;
+		}
+	}
+}
+.doc-times {
+	@extend %equal-heights;
+}
+.doc-slot-list {
+	background-color: $__grapefruit;
+	border: 1px solid $__light__grapefruit;
+	color: $__white;
+	font-size: $__font__size__14;
+	@include margin-padding(10px 10px 0 0, 6px 15px);
+	@include rounded (4px);
+	a {
+		color: $__mild__grapefruit;
+		display: $__inline__block;
+		margin-left: 5px;
+		&:hover {
+			color: $__white;
+		}
+	}
+}
+.schedule-nav {
+	.nav-tabs {
+		border: 0 !important;
+		@extend %flex-wrap;
+		li {
+			display: $__inline__block;
+			@include margin-padding(5px 15px 5px 0, null);
+			@include respond-below(custom479) {
+				display: $__block;
+			    -ms-flex: 0 0 100%;
+			    flex: 0 0 100%;
+			    margin-right: 0;
+			} 
+			&:last-child {
+				margin-right: 0;
+			}
+			a {
+				&.active {
+					background: $__violet__pink;
+				    border: 1px solid $__violet__pink !important;
+					color: $__white;
+				}
+			}
+		}
+		& > li {
+			& > a  {
+				border: 1px solid $__Light__blue__angel;
+				text-transform: $__uppercase;
+				@include rounded(4px);
+				@include margin-padding(null, 6px 15px);
+			}
+		}
+	}
+}
+.hours-info {
+	.form-control {
+		min-height: $__auto;
+	}
+	.btn.btn-danger {
+		&.trash {
+		    height: 38px;
+		    width: $__full__width;
+			@extend %flex-align-center;
+			@extend %justify-content-center;
+		}	
+	}
+}
+.add-more {
+	a {
+		color: $__sky__blue;
+	}
+}
+.edit-link {
+    color: $__sky__blue;
+    font-size: $__font__size__16;
+    margin-top: 4px;
+    @include respond-below(custom575) {
+    	font-size: $__font__size__14;
+    	margin-top: 2px;
+    }
+}
+.submit-section{
+	.submit-btn {
+	    @include margin-padding(null, 12px 30px);
+	    font-weight: $__semibold;
+	    font-size: $__font__size__16;
+	    min-width: 120px;
+	    @include respond-below(custom767) {
+	    	@include margin-padding(null, 10px 20px);
+			font-size: $__font__size__15;
+			min-width: 105px;
+	    }
+	}
+}
+.success-page-cont {
+	@extend %align-items-center;
+	@extend %display-flex;
+}
+.success-card {
+	.card-body {
+		@include margin-padding(null, 50px 20px);
+	}
+}
+.success-cont {
+    text-align: $__center;
+    i {
+	    color: $__white;
+	    width: 60px;
+	    height: 60px;
+	    border: 2px solid $__primarycolor;
+	    font-size: $__font__size__30;
+	    margin-bottom: 30px;
+	    background-color: $__primarycolor;
+	    @include rounded(50%);	    
+	    @extend %justify-content-center;
+	    @extend %inline-flex;
+	    @extend %align-items-center;
+	}
+	h3 {
+	    font-size: $__font__size__24;
+	    @include respond-below(custom767) {
+	    	font-size: $__font__size__22;
+	    }
+	}
+	p {
+	    margin-bottom: 30px;
+	}
+	strong {
+	    font-weight: $__bold;
+	}
+}
+.booking-schedule {
+	&.schedule-widget {
+		@include respond-below(custom575) {
+			overflow-x: $__auto;
+		}
+		& > div {
+			@include respond-below(custom575) {
+				width: 730px;
+			}
+		}
+	}
+	.day-slot ul {
+		@include respond-below(custom575) {
+		    display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: flex;
+		}
+		li {
+			@include respond-below(custom575) {
+			    -ms-flex: 0 0 100px;
+			    flex: 0 0 100px;
+			    width: 100px;
+		    }
+		    &.right-arrow {
+		    	@include respond-below(custom575) {
+		    		right: -20px;
+		    	}
+		    }
+		}
+	}
+	.time-slot {
+		ul {
+			@include respond-below(custom575) {
+				display: $__flex;
+			}
+			li {				
+				@include respond-below(custom575) {
+					-ms-flex: 0 0 100px;
+					flex: 0 0 100px;
+					width: 100px;
+				}
+				.timing {
+					span {
+						@include respond-below(custom767) {
+							display: $__block;
+						}
+						@include respond-below(custom575) {
+							display: $__inline__block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.visits {
+	.visit-btns {
+		color: $__dark__blue;
+		background-color: $__white;
+		width: 80%;
+		margin-bottom: 10px;
+		display: $__block;
+		outline: $__unset;
+		cursor: $__pointer;
+	}
+	input {
+		&:checked ~ .visit-rsn {
+			background-color: $__primarycolor;
+			color: $__white;
+			border-radius: 4px;
+			&:before {
+				opacity: 1;
+			}
+		}
+		&:disabled ~ .visit-rsn {
+			background-color: $__dis__red;
+			color: $__white;
+			border-radius: 5px;
+		}
+		&.form-check-input {
+			opacity: 0;
+			visibility: $__hidden;
+			margin-left: 0;
+			@include position($__absolute, 0, null, null, 0);
+		}
+	}
+	.form-check-input {
+		opacity: 0;
+	}
+	span {
+		&.visit-rsn {
+			background: $__light__green;
+			border: 0;
+			border-radius: 5px;
+			color: $__gray__smokey;
+			display: $__inline__block;
+			font-size: $__font__size__14;
+			margin-bottom: 0px;
+			text-align: $__center;
+			position: $__relative;
+			font-weight: $__semibold;
+			min-width: 133px;
+			width: $__full__width;
+			@include margin-padding(null, 13px 5px);
+			&:before {
+				color: $__primarycolor;
+				background-color: $__white;
+				content: "\f00c";
+				font-family: "Font Awesome 5 Free";
+				font-size: $__font__size__10;
+				font-weight: 900;
+				border-radius: 50px;
+				width: 18px;
+				height: 18px;
+				opacity: 0;
+				@include position($__absolute, 50%, 10px, null, null);
+				@extend %flex-align-center;
+				@include transform (translateY(-50%));
+			}
+		}
+	}
+}

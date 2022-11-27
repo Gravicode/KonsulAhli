@@ -1,0 +1,348 @@
+.breadcrumb-bar {
+    background-color: $__blue;
+    @include margin-padding(null, 15px 0);
+}
+.page-breadcrumb {
+	ol {
+	    background-color: $__transparent;
+	    font-size: $__font__size__12;
+	    margin-bottom: 0;
+	    @include margin-padding(null, 0);
+	    li {
+	    	a {
+	    		color: $__white;
+	    	}
+	    	&.active {
+	    		color: $__white;
+	    	}
+	    }
+	}
+	.breadcrumb-item {
+		& + .breadcrumb-item {
+			&:before {
+				color: $__white;
+				font-size: $__font__size__10;
+			}
+		}
+	}
+}
+.sort-by {
+    float: $__right;
+}
+.sort-title {
+    color: $__white;
+    font-size: $__font__size__14;
+    margin-right: 10px;
+}
+.sortby-fliter {
+	display: $__inline__block;
+	width: 120px;
+}
+.cal-icon {
+	position: $__relative;
+	width: $__full__width;
+	&:after {
+		color: $__ligt__carbon;
+	    content: '\f073';
+		display: $__block;
+	    font-family: "Font Awesome 5 Free";
+	    font-size: $__font__size__16;
+	    font-weight: $__regular;
+	    margin: $__auto;
+	    @include position($__absolute, 10px, 15px, null, null);
+	}
+}
+.custom_check {
+	color: $__light__smokey-gray;
+	display: $__inline__block;
+	position: $__relative;
+	font-size: $__font__size__14;
+	font-size: .9375rem;
+	padding-left: 30px;
+	margin-bottom: 10px;
+	cursor: $__pointer;
+	@extend %user-none;
+	input {
+		position: $__absolute;
+		opacity: 0;
+		cursor: $__pointer;
+		&:checked ~ .checkmark {
+			background-color: $__white;
+			&:after {
+				display: $__block;
+			}
+		}
+	}
+	.checkmark {
+		height: 20px;
+		width: 20px;
+		border: 1px solid $__light-gray;
+		background-color: $__white;
+		@include rounded(3px);
+		@include transition(all 0.3s ease-in-out);
+		@include position($__absolute, 0, null, null, 0);
+		&::after {
+		    content: "\f00c";
+		    font-family: "Font Awesome 5 Free";
+		    font-weight: 900;
+		    display: $__none;
+		    color: $__celeste;
+		    font-size: $__font__size__11;
+		    @include position($__absolute, 0, null, null, 4px);
+		}
+	}
+}
+.custom_radio {
+	color: $__dark__ash__gray;
+	display: $__inline__block;
+	position: $__relative;
+	font-size: $__font__size__14;
+	font-size: $__font__size__15;
+	padding-left: 30px;
+	margin-bottom: 10px;
+	cursor: $__pointer;
+	@extend %user-none;
+	input {
+		position: $__absolute;
+		opacity: 0;
+		&:checked ~ .checkmark {
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+	.checkmark {
+		height: 20px;
+		width: 20px;
+		background-color: $__white;
+		border: 1px solid $__goose-gray;
+		@include rounded(50%);
+		@include position($__absolute, 0, null, null, 0);
+		&:after {
+			display: $__block;
+			content: "";
+			opacity: 0;
+			width: 12px;
+			height: 12px;
+			background: $__cantaloupe;
+			@include rounded(50%);
+			@include transition(all 0.3s ease-in-out);
+			@include position($__absolute, 3px, null, null, 3px);
+		}
+	}
+}
+.radio_input {
+	.custom_radio {
+		& + .custom_radio {
+			margin-left: 15px;
+		}
+	}
+}
+.filter-widget {
+	margin-bottom: 20px;
+	h4 {
+		font-size: 1rem;
+		margin-bottom: 15px;
+	}
+	.custom_check {
+		line-height: 18px;
+	}
+}
+.btn-search {
+	.btn {
+	    background-color: $__celeste;
+	    border: 1px solid $__celeste;
+	    color: $__white;
+	    height: 46px;
+		font-weight: $__medium;
+		font-size: $__font__size__16;
+	}
+}
+.doctor-widget {
+	@extend %display-flex;
+	@include respond-below(custom767) {
+		-ms-flex-direction: column;
+	    flex-direction: column;
+	    text-align: $__center;
+	}
+	.doc-name {
+	    font-size: $__font__size__20;
+	    font-weight: $__medium;
+	    margin-bottom: 3px;
+	    @include respond-below(custom767) {
+	    	font-size: $__font__size__18;
+	    }
+	}
+	.rating {
+		i {
+			font-size: $__font__size__14;
+		}
+	}
+	.average-rating {
+		font-size: $__font__size__14;
+		font-weight: $__medium;
+	}
+}
+.doc-info-left {
+	@extend %display-flex;
+	@include respond-below(custom767) {
+		-ms-flex-direction: column;
+    	flex-direction: column;
+    }
+}
+.doc-info-right {
+    margin-left: $__auto;
+    -ms-flex: 0 0 200px;
+    flex: 0 0 200px;
+    max-width: 200px;
+    @include respond-below(custom767) {
+    	margin-left: 0;
+	    -ms-flex: 0 0 100%;
+	    flex: 0 0 100%;
+	    max-width: 100%;
+    }
+}
+.doctor-img {
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+    margin-right: 20px;
+    width: 150px;
+    @include respond-below(custom767) {
+    	@include margin-padding(0 auto 20px, null);
+    }
+    img {
+		@include rounded(5px);
+	}
+}
+.doc-department {
+    color: $__sky__blue;
+    font-size: $__font__size__14;
+    margin-bottom: 8px;
+    img {
+	    width: 19px;
+	    display: $__inline__block;
+	    margin-right: 10px;
+	}
+}
+.doc-location {
+    color: $__smokey-gray;
+	font-size: $__font__size__14;
+    margin-bottom: 25px;
+    a {
+	    color: $__primarycolor;
+	    font-weight: $__medium;
+	}
+}
+.doc-speciality {
+    font-size: $__font__size__14;
+    color: $__smokey-gray;
+    margin-bottom: 15px;
+}
+.clinic-details {
+	margin-bottom: 15px;
+	h5 {
+	    font-weight: $__normal;
+	    color: $__smokey-gray;
+	    margin-bottom: 25px;
+	}
+	ul {
+		list-style: $__none;
+		@include margin-padding(0, 0);
+		li {
+			display: $__inline__block;
+			padding-right: 5px;
+			&:last-child {
+				padding-right: 0;
+			}
+			a {
+				display: $__inline__block;
+				img {
+					width: 40px;
+					@include rounded(5px);
+				}
+			}
+		}
+	}
+}
+.clinic-services {
+    color: $__dark__blue;
+	@extend %display-flex;
+    font-size: $__font__size__13;
+    @extend %flex-wrap;
+    @include respond-below(custom767) {
+    	display: $__none;
+    }
+    span {
+	    border: 1px solid $__goose-gray;
+	    display: $__inline__block;
+	    font-size: $__font__size__12;
+	    @include margin-padding(null, 3px 10px);
+	    @include rounded(4px);
+	    & + span {
+		    margin-left: 5px;
+		}
+	}
+}
+.clini-infos {
+    margin-bottom: 15px;
+    ul {
+		font-size: $__font__size__14;
+		list-style: $__none;
+		@include margin-padding(0, 0);
+		li {
+		    display: $__block;
+		    line-height: 30px;
+		    color: $__dark__plum__purple;
+		    i {
+			    font-size: $__font__size__15;
+			    min-width: 30px;
+			}
+		}
+	}
+}
+.clinic-booking {
+	a {
+		background-color: $__white;
+	    border: 2px solid $__sky__blue;
+	    color: $__sky__blue;
+	    display: $__block;
+	    font-size: $__font__size__14;
+	    font-weight: $__medium;
+	    letter-spacing: 1px;
+	    text-align: $__center;
+	    text-transform: $__uppercase;
+	    width: $__full__width;
+	    @include margin-padding(null, 10px 15px);
+	    @include rounded(4px);
+		& + a {
+			margin-top: 15px;
+		}
+		&.view-pro-btn {
+			&:hover, &:focus {
+				background: $__sky__blue; 
+				color: $__white;
+			}
+		}
+		&.apt-btn {
+		    background: $__sky__blue; 
+			color: $__white;
+			@include respond-below(custom479) {
+				width: $__full__width;
+			}
+			&:hover, &:focus {
+				background-color: $__turquoise;
+				border-color: $__turquoise;
+				color: $__white;
+			}
+		}
+		&.view-pro-btn {
+			@include respond-below(custom479) {
+				width: $__full__width;
+	    		margin-bottom: 15px;
+			}			
+		}
+	}
+}
+.load-more {
+	margin-bottom: 30px;
+}
